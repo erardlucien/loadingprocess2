@@ -5,8 +5,8 @@ let counter = 0;
 function countdown() {
 
     if(textContainer.classList.contains('text-container-active') && counter < 100) {
-        text.textContent = `${ counter += 10 }%`;
-        timeout = setTimeout(countdown, 300); 
+        text.textContent = `${ counter += 1 }%`;
+        timeout = setTimeout(countdown, 15); 
     } else {
         clearTimeout(timeout);
     }
@@ -15,5 +15,5 @@ function countdown() {
 
 setTimeout( () => {
     textContainer.classList.add('text-container-active');
-    setTimeout(countdown, 100);          
+    setTimeout(countdown, 500);          
 }, 100);
