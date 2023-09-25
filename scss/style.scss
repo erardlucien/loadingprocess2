@@ -1,0 +1,84 @@
+// reset
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+// custom variables
+
+$transition: background 2s linear;
+
+// container
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// text-container
+
+.text-container {
+    position: relative;
+    min-width: 60vmin;
+    min-height: 10rem;
+    border: 0.3rem solid rgb(0, 0, 12);
+    overflow: hidden;
+    z-index: 1;
+}
+
+// text-container-active
+
+.text-container-active {
+
+    .text,
+    .text-background {
+        background-position-x: 0%;
+        transition: $transition;
+    }
+
+}
+
+// text
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    min-width: inherit;
+    min-height: inherit;
+    font-size: 2.5rem;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, rgb(245, 245, 250) 50%, rgb(0, 0, 12) 50%);
+    background-size: 200%;
+    background-position-x: 100%;
+    background-repeat: no-repeat;
+}
+
+// text-background
+
+.text-background {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: inherit;
+    min-width: inherit;
+    background-image: linear-gradient(to right, rgb(0, 0, 12) 50%, rgb(245, 245, 250) 50%);
+    background-size: 200%;
+    background-position-x: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
